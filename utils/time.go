@@ -12,6 +12,10 @@ func Time2String(t time.Time) string {
 func Time2StringSecond(t time.Time) string {
 	return t.Format("2006-01-02 15:04:05")
 }
+func Time2StringMinute(t time.Time) string {
+	return t.Format("06-01-02 15:04")
+}
+
 func Time2Version(t time.Time) string {
 	return t.Format("060102.150405")
 }
@@ -66,4 +70,9 @@ func UnixToTimestring(n int64) string {
 func UnixMsToTimestring(n int64) string {
 	now := time.Unix(n/1000, 0)
 	return Time2StringSecond(now)
+}
+
+func UnixMsToTimestringMinute(n int64) string {
+	now := time.Unix(n/1000, 0)
+	return Time2StringMinute(now)
 }
